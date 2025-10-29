@@ -1,0 +1,75 @@
+/* src/app/components/login/login.component.css */
+
+.login-container {
+  height: 90vh; /* Ocupa a altura da tela, menos um pouco de espaço */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  /* Usando o roxo escuro do seu sidenav/toolbar para o fundo do form */
+  background-color: #2b2040;
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-header img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.login-header h1 {
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.login-header p {
+  color: #c9b6ff; /* Usando a cor lilás dos seus ícones para o nome */
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* --- Estilização dos campos do Material com suas cores --- */
+
+/* Cor do texto, label e ícones */
+:host ::ng-deep .mat-form-field-label,
+:host ::ng-deep .mat-input-element,
+:host ::ng-deep .mat-form-field .mat-icon {
+  color: #dcdcdc;
+}
+
+/* Cor da borda do campo */
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Cor da borda QUANDO FOCADO (seu roxo vibrante!) */
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #a855f7;
+}
+
+/* Cor do label QUANDO FOCADO */
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #a855f7;
+}
+
+/* Cor de fundo do botão primário (você pode ajustar no tema do Material se quiser,
+   mas aqui forçamos para garantir consistência) */
+:host ::ng-deep .mat-raised-button.mat-primary {
+  background-color: #a855f7;
+  color: #ffffff;
+}
