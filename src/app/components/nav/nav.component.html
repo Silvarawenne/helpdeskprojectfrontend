@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" (click)="sidenav.close()">
+        <mat-icon>home</mat-icon> Home
+      </a>
+      <a mat-list-item routerLink="/tecnicos" (click)="sidenav.close()">
+        <mat-icon>people</mat-icon> Técnicos
+      </a>
+      <a mat-list-item routerLink="/clientes" (click)="sidenav.close()">
+        <mat-icon>person</mat-icon> Clientes
+      </a>
+      <a mat-list-item href="https://github.com/Silvarawenne" target="_blank" (click)="sidenav.close()">
+        <mat-icon>code</mat-icon> Rawenne
+      </a>
+      <a mat-list-item routerLink="/logout" (click)="sidenav.close()">
+        <mat-icon>exit_to_app</mat-icon> Logout
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

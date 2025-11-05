@@ -73,3 +73,14 @@
   background-color: #a855f7;
   color: #ffffff;
 }
+
+/* ... (todo o seu CSS do login-container, etc) ... */
+
+/* Estilo para o botão quando estiver desabilitado */
+:host ::ng-deep .mat-raised-button[disabled] {
+  /* Usando seu roxo vibrante, mas com transparência */
+  background-color: rgba(168, 85, 247, 0.4); 
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
