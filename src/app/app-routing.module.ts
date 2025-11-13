@@ -5,6 +5,8 @@ import { LoginComponent } from './login.component';
 import { AuthGuard } from './services/auth.guard';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'home', component: HomeComponent },
+      {path: 'tecnicos', component: TecnicoListComponent},
+      {path: 'clientes', component: ClienteListComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'}
     ]
   }

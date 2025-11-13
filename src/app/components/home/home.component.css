@@ -1,0 +1,128 @@
+/* src/app/components/home/home.component.css */
+
+.home-container {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+/* Cabeçalho */
+.header-section {
+  margin-bottom: 3rem;
+  text-align: center; /* Centraliza o título */
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  color: #a855f7; /* Seu roxo vibrante para o título principal */
+  margin-bottom: 0.5rem;
+}
+
+.header-section p {
+  color: #e0e0e0; /* Branco suave para o texto descritivo */
+  font-size: 1.1rem;
+}
+
+/* Grid dos Cards */
+.dashboard-cards {
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  gap: 25px; /* Aumentei um pouco o espaçamento */
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  max-width: 1200px; /* Limita a largura para centralizar melhor */
+  margin: 0 auto; /* Centraliza o bloco de cards */
+}
+
+/* Estilo Geral do Card */
+.info-card {
+  background-color: #2b2040; /* Roxo escuro, complementando o fundo geral */
+  color: #f0f0f0; /* Texto claro nos cards */
+  flex: 1; /* Faz os cards terem o mesmo tamanho */
+  min-width: 280px; /* Aumentei a largura mínima */
+  max-width: 320px; /* Largura máxima para não ficarem muito grandes */
+  padding: 25px; /* Aumentei um pouco o padding */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; /* Ícone e texto em coluna */
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* Sombra mais forte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.info-card:hover {
+  transform: translateY(-8px); /* Sobe um pouco mais */
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3); /* Brilho roxo mais intenso */
+}
+
+/* Ícones */
+.card-icon {
+  background-color: rgba(168, 85, 247, 0.15); /* Fundo roxo suave para o ícone */
+  padding: 18px; /* Aumentei o padding do ícone */
+  border-radius: 50%;
+  margin-bottom: 20px; /* Espaçamento abaixo do ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon mat-icon {
+  font-size: 38px; /* Ícone maior */
+  width: 38px;
+  height: 38px;
+}
+
+/* Cores Específicas para cada status (do ícone e do número principal) */
+.card-open .card-icon mat-icon, .card-open .card-content h2 { color: #ef4444; } /* Vermelho */
+.card-process .card-icon mat-icon, .card-process .card-content h2 { color: #eab308; } /* Amarelo */
+.card-closed .card-icon mat-icon, .card-closed .card-content h2 { color: #22c55e; } /* Verde */
+
+/* Texto dentro do Card */
+.card-content h3 {
+  font-size: 1.1rem;
+  color: #e0e0e0; /* Branco suave para o título do card */
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+
+.card-content h2 {
+  font-size: 2.5rem; /* Número maior */
+  font-weight: bold;
+  margin: 0; /* Remove margem padrão */
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #9ca3af; /* Cinza suave para a descrição */
+  margin: 5px 0 0 0;
+}
+
+/* Ilustração (centralizada em baixo) */
+.home-illustration {
+  margin-top: 4rem;
+  text-align: center;
+  opacity: 0.5; /* Mais transparente */
+}
+
+.home-illustration img {
+  max-width: 500px; /* Ilustração um pouco maior */
+  width: 100%;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  .header-section h1 {
+    font-size: 2rem;
+  }
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-card {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
