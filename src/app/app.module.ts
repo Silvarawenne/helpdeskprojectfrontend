@@ -10,22 +10,37 @@ import { MaterialModule } from './material.module';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { AuthInterceptor, AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    TecnicoListComponent,
+    TecnicoCreateComponent,
+    TecnicoUpdateComponent,
+    TecnicoDeleteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     ToastrModule.forRoot({
       timeOut: 4000,
@@ -36,7 +51,9 @@ import { HomeComponent } from './components/home/home.component';
     }),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

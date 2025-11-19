@@ -17,7 +17,10 @@ export class AuthService {
   ) { }
 
   authenticate(creds: Credenciais){
-    console.log('AuthService.authenticate() foi chamado!');
+    return this.http.post(`${this.baseUrl}/login`, creds,{
+      observe: 'response',
+      responseType: 'text'
+    });
   }
 
   successfulLogin(token: string){

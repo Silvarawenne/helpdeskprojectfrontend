@@ -1,0 +1,67 @@
+/* src/app/components/tecnico/tecnico-update/tecnico-update.component.css */
+
+.container {
+  /* Ocupa quase tudo em telas pequenas, mas para em 700px nas grandes */
+  width: 100%;
+  max-width: 700px;
+  
+  /* Centraliza horizontalmente */
+  margin: 0 auto; 
+  
+  /* Espaçamento interno seguro */
+  padding: 2rem;
+  
+  background-color: #2b2040;
+  border-radius: 8px;
+  
+  /* Importante: Se o conteúdo for maior que a tela, deixa crescer */
+  height: auto; 
+  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.full-width {
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #a855f7;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfis {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Se der muito zoom, os checkboxes quebram linha */
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 10px; /* Botão maior para toque/zoom */
+  font-size: 1.1rem;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}

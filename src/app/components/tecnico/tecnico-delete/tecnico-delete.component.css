@@ -1,0 +1,57 @@
+/* src/app/components/tecnico/tecnico-delete/tecnico-delete.component.css */
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  padding: 2rem;
+  background-color: #2b2040;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  height: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #ef4444; /* Vermelho para indicar perigo/delete */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfis {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}

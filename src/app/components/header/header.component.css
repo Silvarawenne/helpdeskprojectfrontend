@@ -1,0 +1,37 @@
+/* src/app/components/header/header.component.css */
+
+.header {
+  background-color: #2b2040;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  
+  /* Flexbox para alinhar */
+  display: flex;
+  align-items: center;
+  
+  /* Garante que os itens não fiquem espremidos demais */
+  flex-wrap: wrap; 
+  
+  /* Altura automática para crescer se o texto quebrar */
+  height: auto;
+  min-height: 64px; /* Altura padrão do Material */
+  padding: 0 16px;
+}
+
+/* O Espaçador Elástico */
+.spacer {
+  flex: 1 1 auto; 
+}
+
+/* Ajuste para o texto não "colar" */
+span {
+  margin: 0 10px;
+  white-space: nowrap; /* Impede que o texto quebre no meio da palavra */
+}
+
+/* Responsividade: Esconde o nome do usuário se a tela for muito pequena (tipo celular ou zoom 200%) */
+@media (max-width: 500px) {
+  .user-name {
+    display: none;
+  }
+}

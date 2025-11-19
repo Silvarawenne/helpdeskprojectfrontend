@@ -1,0 +1,42 @@
+<div class="container mat-elevation-z8">
+  
+  <h1 class="full-width">Deletar Técnico</h1>
+
+  <form>
+    
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput [value]="tecnico.nome" name="nome" disabled>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input matInput [value]="tecnico.cpf" name="cpf" disabled>
+      <mat-icon matSuffix>pin</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input matInput [value]="tecnico.email" name="email" disabled>
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" value="******" name="senha" disabled>
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+
+    <div class="perfis">
+      <mat-checkbox [checked]="tecnico.perfis.includes('ADMIN') || tecnico.perfis.includes(0)" disabled class="margin-left">ADMIN</mat-checkbox>
+      <mat-checkbox [checked]="tecnico.perfis.includes('TECNICO') || tecnico.perfis.includes(1)" disabled class="margin-left">TÉCNICO</mat-checkbox>
+    </div>
+
+    <button (click)="delete()" class="full-width mat-elevation-z4" mat-raised-button color="warn">DELETAR</button>
+    <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="primary">CANCELAR</button>
+
+  </form>
+
+  <p class="footer-text">Desenvolvido por Rawenne Leite</p>
+</div>

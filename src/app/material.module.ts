@@ -13,11 +13,13 @@ import { MatPaginatorModule } from '@angular/material/paginator'; // Para tabela
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table'; // Para tabelas
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatBadgeModule } from '@angular/material/badge'; // <-- Para os "números"
+import { MatBadgeModule } from '@angular/material/badge'; 
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
+import { MatSelectModule } from '@angular/material/select';     
+import { MatRadioModule } from '@angular/material/radio';
+
 
 @NgModule({
-  // Nós usamos 'exports' aqui para que qualquer módulo que importe o MaterialModule
-  // (como o AppModule) possa "enxergar" e usar esses componentes.
   exports: [ 
     MatButtonModule,
     MatCardModule,
@@ -30,7 +32,10 @@ import { MatBadgeModule } from '@angular/material/badge'; // <-- Para os "númer
     MatSidenavModule,
     MatTableModule,
     MatToolbarModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }

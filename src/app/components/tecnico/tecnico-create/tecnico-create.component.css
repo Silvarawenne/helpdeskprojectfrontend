@@ -1,0 +1,63 @@
+/* src/app/components/tecnico/tecnico-create/tecnico-create.component.css */
+
+.container {
+  width: 40%; /* Ocupa menos espaço para ficar centralizado e elegante */
+  margin: auto; /* Centraliza na tela */
+  padding: 40px;
+  background-color: #2b2040; /* Fundo roxo escuro */
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #a855f7; /* Roxo vibrante */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfis {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+/* Cor do Texto do Footer */
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
+
+/* Responsividade para celular */
+@media (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+}
