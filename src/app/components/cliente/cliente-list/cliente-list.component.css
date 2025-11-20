@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #a855f7;
+}
+
+.content-table {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  background-color: #2b2040;
+}
+
+th {
+  background-color: #32264d;
+  color: #fff;
+}
+
+td {
+  color: #e0e0e0;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.edit {
+  color: #facc15;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete {
+  color: #f87171;
+  cursor: pointer;
+}
+
+button {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  max-width: 600px; /* Tamanho bom para não ficar gigante */
+  margin: 20px auto;
+  padding: 2rem;
+  background-color: #2b2040;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  height: auto; /* Permite crescer */
+}
+
+.full-width {
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #a855f7;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfis {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 1rem;
+  }
+}

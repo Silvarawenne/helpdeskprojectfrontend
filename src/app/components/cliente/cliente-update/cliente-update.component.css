@@ -1,0 +1,74 @@
+/* src/app/components/cliente/cliente-update/cliente-update.component.css */
+
+.container {
+  /* Responsividade: ocupa 100% em telas pequenas, mas trava em 600px nas grandes */
+  width: 100%;
+  max-width: 600px;
+  
+  /* Centraliza na tela */
+  margin: 20px auto 40px auto;
+  
+  /* Espaçamento interno */
+  padding: 2rem;
+  
+  background-color: #2b2040; /* Roxo escuro do tema */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para destaque */
+  
+  /* Importante: Permite crescer se o conteúdo for grande */
+  height: auto;
+  box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #a855f7; /* Roxo vibrante para indicar Edição */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfis {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Quebra linha se faltar espaço */
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 400px) {
+  .container {
+    padding: 1rem;
+  }
+}
