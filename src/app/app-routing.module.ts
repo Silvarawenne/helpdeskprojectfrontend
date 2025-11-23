@@ -25,20 +25,19 @@ const routes: Routes = [
     component: NavComponent,
     canActivate: [AuthGuard],
     children: [
-      //ROTAS PARA TÉCNICOS
       {path: 'home', component: HomeComponent },
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      //ROTAS PARA TÉCNICOS
       {path: 'tecnicos', component: TecnicoListComponent},
       {path: 'tecnicos/create', component: TecnicoCreateComponent},
       { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
       { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent },
-      {path: 'clientes', component: ClienteListComponent},
       
       //ROTAS PARA CLIENTES
       { path: 'clientes', component: ClienteListComponent },
       { path: 'clientes/create', component: ClienteCreateComponent },
       { path: 'clientes/update/:id', component: ClienteUpdateComponent },
       { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
-      {path: '', redirectTo: 'home', pathMatch: 'full'}
     ]
   }
 ];

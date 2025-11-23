@@ -26,7 +26,6 @@ import { ClienteUpdateComponent } from './components/cliente/cliente-update/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

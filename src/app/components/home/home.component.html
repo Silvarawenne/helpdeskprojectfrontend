@@ -2,47 +2,47 @@
   
   <div class="header-section">
     <h1>Bem-vindo ao HelpDesk</h1>
-    <p>Sistema de gerenciamento de chamados e suporte técnico.</p>
+    <p>Gerencie seus técnicos e clientes de forma simples.</p>
   </div>
 
   <div class="dashboard-cards">
 
-    <mat-card class="info-card card-open">
+    <mat-card class="info-card">
       <div class="card-icon">
-        <mat-icon>assignment_late</mat-icon>
-      </div>
+        <mat-icon>security</mat-icon> </div>
       <div class="card-content">
-        <h3>Chamados Abertos</h3>
-        <h2>12</h2> <p>Aguardando atendimento</p>
+        <h3>Segurança</h3>
+        <h2>JWT</h2>
+        <p>Autenticação segura</p>
       </div>
     </mat-card>
 
-    <mat-card class="info-card card-process">
+    <mat-card class="info-card card-process" routerLink="/tecnicos" style="cursor: pointer;">
       <div class="card-icon">
-        <mat-icon>hourglass_empty</mat-icon>
+        <mat-icon>account_circle</mat-icon>
       </div>
       <div class="card-content">
-        <h3>Em Andamento</h3>
-        <h2>5</h2>
-        <p>Sendo resolvidos</p>
+        <h3>Gerenciar</h3>
+        <h2>Técnicos</h2>
+        <p>Clique para listar</p>
       </div>
     </mat-card>
 
-    <mat-card class="info-card card-closed">
+    <mat-card class="info-card card-closed" routerLink="/clientes" style="cursor: pointer;">
       <div class="card-icon">
-        <mat-icon>assignment_turned_in</mat-icon>
+        <mat-icon>person</mat-icon>
       </div>
       <div class="card-content">
-        <h3>Encerrados</h3>
-        <h2>48</h2>
-        <p>Finalizados este mês</p>
+        <h3>Gerenciar</h3>
+        <h2>Clientes</h2>
+        <p>Clique para listar</p>
       </div>
     </mat-card>
 
   </div>
 
   <div class="home-illustration">
-    <img src="assets/img/home-image.svg" alt="Ilustração Helpdesk" onerror="this.style.display='none'">
-    </div>
+    <img src="assets/img/tecnico-create.svg" alt="Ilustração Helpdesk" onerror="this.style.display='none'">
+  </div>
 
 </div>
