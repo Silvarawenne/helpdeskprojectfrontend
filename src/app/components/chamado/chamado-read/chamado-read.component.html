@@ -1,0 +1,44 @@
+<div class="container mat-elevation-z8">
+  <h1 class="full-width">Detalhes do Chamado</h1>
+
+  <form>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Título do Chamado</mat-label>
+      <input matInput [value]="chamado.titulo" name="titulo" disabled>
+    </mat-form-field>
+
+    <div class="status-prioridade">
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <input matInput [value]="retornaStatus(chamado.status)" name="status" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Prioridade</mat-label>
+        <input matInput [value]="retornaPrioridade(chamado.prioridade)" name="prioridade" disabled>
+      </mat-form-field>
+    </div>
+
+    <div class="tecnico-cliente">
+      <mat-form-field appearance="outline">
+        <mat-label>Técnico</mat-label>
+        <input matInput [value]="chamado.nomeTecnico" name="tecnico" disabled>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Cliente</mat-label>
+        <input matInput [value]="chamado.nomeCliente" name="cliente" disabled>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Observações</mat-label>
+      <textarea matInput [value]="chamado.observacoes" class="area" name="observacoes" disabled></textarea>
+    </mat-form-field>
+
+    <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="primary">VOLTAR</button>
+
+  </form>
+
+  <p class="footer-text">Desenvolvido por Rawenne Silva</p>
+</div>
