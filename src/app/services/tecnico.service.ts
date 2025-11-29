@@ -5,17 +5,18 @@ import { environment } from 'src/environments/environment';
 import { Tecnico } from '../models/tecnico';
 
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root'
 })
 
-export class TecnicoService{
+export class TecnicoService {
   baseUrl: string = environment.baseUrl;
 
-  constructor(private http: HttpClient){ }
+  constructor(private http: HttpClient) { }
 
   findAll(): Observable<Tecnico[]> {
-    return this.http.get<Tecnico[]>('http://localhost:8080/tecnicos');
+    return this.http.get<Tecnico[]>(`${this.baseUrl}/tecnicos`);
   }
+
 
   create(tecnico: Tecnico): Observable<Tecnico> {
     return this.http.post<Tecnico>(`${this.baseUrl}/tecnicos`, tecnico);
