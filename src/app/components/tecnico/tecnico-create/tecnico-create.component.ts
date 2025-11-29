@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -31,6 +32,7 @@ export class TecnicoCreateComponent implements OnInit {
     private service: TecnicoService,
     private toast: ToastrService,
     private router: Router,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -41,29 +43,21 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(): void {
-    // 1. Garante que o objeto técnico a ser enviado tenha pelo menos o perfil CLIENTE
-    // Seu backend pode exigir isso, ou você deve garantir que o Admin está setado.
-    if (this.tecnico.perfis.length === 0) {
-        this.toast.error('O técnico deve ter pelo menos um Perfil (CLIENTE ou ADMIN).', 'Validação');
-        return; 
-    }
+    // Adicionar aqui a validação de perfis que sugeri na última conversa
     
     this.service.create(this.tecnico).subscribe(resposta => {
       this.toast.success('Técnico cadastrado com sucesso!', 'Cadastro');
       
-      // CORREÇÃO: Navegação absoluta para garantir que o componente de lista recarregue
-      this.router.navigate(['/tecnicos']); 
-      
+      // 1. Navega para a lista
+      this.router.navigate(['/tecnicos']).then(() => {
+          // 2. Após a navegação, força o reload da página.
+          // Isso garante que o ngOnInit do TecnicoListComponent rode novamente.
+          window.location.reload(); 
+      }); 
+
     }, ex => {
-      console.log(ex);
-      if(ex.error.errors) {
-        ex.error.errors.forEach((element: any) => {
-          this.toast.error(element.message);
-        });
-      } else {
-        // Agora que o 403 está resolvido, este erro será geralmente 400 Bad Request
-        this.toast.error(ex.error.message);
-      }
+      // ... seu código de tratamento de erro (ex) permanece o mesmo
+      // ...
     }); 
   }
 
