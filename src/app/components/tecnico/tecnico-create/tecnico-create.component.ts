@@ -41,9 +41,19 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(): void {
+    // 1. Garante que o objeto técnico a ser enviado tenha pelo menos o perfil CLIENTE
+    // Seu backend pode exigir isso, ou você deve garantir que o Admin está setado.
+    if (this.tecnico.perfis.length === 0) {
+        this.toast.error('O técnico deve ter pelo menos um Perfil (CLIENTE ou ADMIN).', 'Validação');
+        return; 
+    }
+    
     this.service.create(this.tecnico).subscribe(resposta => {
       this.toast.success('Técnico cadastrado com sucesso!', 'Cadastro');
-      this.router.navigate(['tecnicos']);
+      
+      // CORREÇÃO: Navegação absoluta para garantir que o componente de lista recarregue
+      this.router.navigate(['/tecnicos']); 
+      
     }, ex => {
       console.log(ex);
       if(ex.error.errors) {
@@ -51,6 +61,7 @@ export class TecnicoCreateComponent implements OnInit {
           this.toast.error(element.message);
         });
       } else {
+        // Agora que o 403 está resolvido, este erro será geralmente 400 Bad Request
         this.toast.error(ex.error.message);
       }
     }); 
