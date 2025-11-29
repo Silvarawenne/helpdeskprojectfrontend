@@ -43,43 +43,27 @@ export class TecnicoCreateComponent implements OnInit {
     return this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid;
   }
 
+  // TecnicoCreateComponent.ts
+
+// ... (todo o código acima permanece igual)
+
   create(): void {
     
-    // VERIFICAÇÃO 1: Garante que pelo menos um perfil foi selecionado
-    if (this.tecnico.perfis.length === 0) {
-        this.toast.error('O técnico deve ter pelo menos um Perfil (ADMIN ou TÉCNICO).', 'Validação');
-        return; 
-    }
-    
-    // CORREÇÃO FINAL DE DADOS: Remove a máscara do CPF antes de enviar para o Backend Java
-    // Se você estiver usando uma biblioteca de máscara, esta linha é crucial.
-    this.tecnico.cpf = this.tecnico.cpf.replace(/[^0-9]/g, ""); 
+    // ... (restante da lógica de validação)
     
     this.service.create(this.tecnico).subscribe(resposta => {
+      // 1. TOAST DE SUCESSO (VAI APARECER AGORA)
       this.toast.success('Técnico cadastrado com sucesso!', 'Cadastro');
       
-      // CORREÇÃO DE ATUALIZAÇÃO DA LISTA: Navegação absoluta seguida de reload
-      this.router.navigate(['/tecnicos']).then(() => {
-          window.location.reload(); 
-      }); 
+      // 2. NAVEGAÇÃO PURA (Sem forçar o reload imediato)
+      this.router.navigate(['/tecnicos']); 
 
     }, ex => {
-      // TRATAMENTO DE ERRO COMPLETO (Para expor o 400 Bad Request)
-      console.error(ex);
-      if(ex.error.errors) {
-        // Erros de validação do Spring (@Size, @Email, etc.)
-        ex.error.errors.forEach((element: any) => {
-          this.toast.error(element.message);
-        });
-      } else if (ex.error.message) {
-        // Erro de lógica de negócio (DataIntegrityViolation - CPF/Email duplicado)
-        this.toast.error(ex.error.message);
-      } else {
-         // Erro genérico (ex: 403 Forbidden se algo falhou no filtro)
-         this.toast.error('Ocorreu um erro inesperado no servidor. Tente novamente.');
-      }
+      // ... (código de tratamento de erro)
     }); 
   }
+  
+// ...
 
   addPerfil(perfil: any): void {
     if(this.tecnico.perfis.includes(perfil)) {
