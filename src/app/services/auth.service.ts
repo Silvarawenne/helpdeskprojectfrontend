@@ -17,14 +17,15 @@ export class AuthService {
   ) { }
 
   authenticate(creds: Credenciais){
-    return this.http.post(`${this.baseUrl}/login`, creds,{
+    return this.http.post(`${this.baseUrl}/login`, creds, {
       observe: 'response',
       responseType: 'text'
     });
   }
 
   successfulLogin(token: string){
-    let authToken = token.substring(7);
+    // 🔥 Token corrigido (não corta errado)
+    const authToken = token.startsWith("Bearer ") ? token.substring(7) : token;
     localStorage.setItem('token', authToken);
     this.router.navigate(['home']);
   }
